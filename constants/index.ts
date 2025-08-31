@@ -1,0 +1,167 @@
+export const navLinks = [
+  { href: '/men', label: 'Men' },
+  { href: '/women', label: 'Women' },
+  { href: '/kids', label: 'Kids' },
+  { href: '/collections', label: 'Collections' },
+  { href: '/contact', label: 'Contact'}
+];
+
+export const footerLinks = {
+  products: [
+    { href: '/shoes', label: 'Shoes' },
+    { href: '/clothing', label: 'Clothing' },
+    { href: '/accessories', label: 'Accessories' },
+    { href: '/sale', label: 'Sale' },
+  ],
+  sports: [
+    { href: '/running', label: 'Running' },
+    { href: '/basketball', label: 'Basketball' },
+    { href: '/football', label: 'Football' },
+    { href: '/training', label: 'Training' },
+  ],
+  support: [
+    { href: '/help', label: 'Help' },
+    { href: '/returns', label: 'Returns' },
+    { href: '/size-guide', label: 'Size Guide' },
+    { href: '/contact-us', label: 'Contact Us' },
+  ],
+  company: [
+    { href: '/about', label: 'About Nike' },
+    { href: '/news', label: 'News' },
+    { href: '/careers', label: 'Careers' },
+    { href: '/investors', label: 'Investors' },
+  ],
+  legal: [
+    { href: '/privacy', label: 'Privacy Policy' },
+    { href: '/terms', label: 'Terms of Use' },
+    { href: '/accessibility', label: 'Accessibility' },
+    { href: '/cookies', label: 'Cookies' },
+  ],
+};
+
+export const socialLinks = [
+  { href: 'https://facebook.com/nike', icon: '/facebook.svg', label: 'Facebook' },
+  { href: 'https://instagram.com/nike', icon: '/instagram.svg', label: 'Instagram' },
+  { href: 'https://twitter.com/nike', icon: '/x.svg', label: 'Twitter' },
+];
+export const products = [
+  {
+    id: 1,
+    name: "Nike Air Max 270",
+    description: "Revolutionary Air Max technology for all-day comfort and style.",
+    price: 150,
+    stock: 100,
+    category: "Shoes",
+    subCategory: "Lifestyle",
+    brand: "Nike",
+    imageUrl: "/shoes/shoe-1.jpg",
+    featured: true,
+  },
+  {
+    id: 2,
+    name: "Nike React Element",
+    description: "Lightweight and responsive running shoes with React foam.",
+    price: 130,
+    stock: 80,
+    category: "Shoes",
+    subCategory: "Running",
+    brand: "Nike",
+    imageUrl: "/shoes/shoe-2.webp",
+    featured: false,
+  },
+  {
+    id: 3,
+    name: "Nike Zoom Pegasus",
+    description: "Versatile training shoes for everyday workouts.",
+    price: 120,
+    stock: 60,
+    category: "Shoes",
+    subCategory: "Training",
+    brand: "Nike",
+    imageUrl: "/shoes/shoe-3.webp",
+    featured: true,
+  },
+  {
+    id: 4,
+    name: "Nike Air Force 1",
+    description: "Iconic basketball shoes with timeless design.",
+    price: 110,
+    stock: 90,
+    category: "Shoes",
+    subCategory: "Basketball",
+    brand: "Nike",
+    imageUrl: "/shoes/shoe-4.webp",
+    featured: false,
+  },
+  {
+    id: 5,
+    name: "Nike Dunk Low",
+    description: "Retro-inspired sneakers for casual wear.",
+    price: 100,
+    stock: 70,
+    category: "Shoes",
+    subCategory: "Casual",
+    brand: "Nike",
+    imageUrl: "/shoes/shoe-5.avif",
+    featured: true,
+  },
+  {
+    id: 6,
+    name: "Nike Blazer Mid",
+    description: "Classic mid-top shoes with premium leather.",
+    price: 90,
+    stock: 50,
+    category: "Shoes",
+    subCategory: "Lifestyle",
+    brand: "Nike",
+    imageUrl: "/shoes/shoe-6.avif",
+    featured: false,
+  },
+  {
+    id: 7,
+    name: "Nike Cortez",
+    description: "Heritage running shoes with vintage appeal.",
+    price: 80,
+    stock: 40,
+    category: "Shoes",
+    subCategory: "Running",
+    brand: "Nike",
+    imageUrl: "/shoes/shoe-7.avif",
+    featured: true,
+  },
+  {
+    id: 8,
+    name: "Nike Roshe Run",
+    description: "Minimalist design for everyday comfort.",
+    price: 85,
+    stock: 65,
+    category: "Shoes",
+    subCategory: "Casual",
+    brand: "Nike",
+    imageUrl: "/shoes/shoe-8.avif",
+    featured: false,
+  },
+];
+
+
+
+export const trendingItems = [
+  {
+    id: 1,
+    title: 'New Arrivals',
+    description: 'Discover the latest in Nike footwear and apparel.',
+    image: '/trending-1.png',
+  },
+  {
+    id: 2,
+    title: 'Best Sellers',
+    description: 'Top-rated products loved by our customers.',
+    image: '/trending-2.png',
+  },
+  {
+    id: 3,
+    title: 'Limited Edition',
+    description: 'Exclusive drops you don\'t want to miss.',
+    image: '/trending-3.png',
+  },
+];
