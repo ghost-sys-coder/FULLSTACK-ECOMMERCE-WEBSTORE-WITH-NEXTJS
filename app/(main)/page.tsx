@@ -4,6 +4,7 @@ import { products } from '@/constants';
 import HeroSection from '@/components/shared/heroSection';
 import TrendingSection from '@/components/shared/trendingSection';
 
+
 const Home = () => {
   return (
     <div className="container mx-auto">

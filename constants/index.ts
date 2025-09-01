@@ -26,7 +26,7 @@ export const footerLinks = {
     { href: '/contact-us', label: 'Contact Us' },
   ],
   company: [
-    { href: '/about', label: 'About Nike' },
+    { href: '/about', label: 'About Shopora' },
     { href: '/news', label: 'News' },
     { href: '/careers', label: 'Careers' },
     { href: '/investors', label: 'Investors' },

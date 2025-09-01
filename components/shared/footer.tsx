@@ -68,7 +68,7 @@ const Footer = () => {
           {/* Newsletter Signup */}
           <div>
             <h3 className="text-sm font-semibold mb-4">Stay Connected</h3>
-            <p className="text-gray-400 text-sm mb-4">Get the latest news and updates from Nike.</p>
+            <p className="text-gray-400 text-sm mb-4">Get the latest news and updates from Shopora.</p>
             <div className="flex flex-col gap-2">
               <input
                 type="email"
@@ -112,7 +112,7 @@ const Footer = () => {
 
           {/* Copyright */}
           <div className="mt-8 text-center text-gray-400 text-sm">
-            <p>&copy; 2024 Nike, Inc. All rights reserved.</p>
+            <p>&copy; 2025 Shopora, Inc. All rights reserved.</p>
           </div>
         </div>
       </div>
