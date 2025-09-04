@@ -3,6 +3,21 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { Save, User, Bell, Shield, CreditCard, Globe } from 'lucide-react'
+import SelectComponent from '@/components/dashboard/SelectComponent';
+
+const currencies = [
+    { value: 'USD', symbol: '$', name: 'US Dollar' },
+    { value: 'EUR', symbol: '€', name: 'Euro' },
+    { value: 'GBP', symbol: '£', name: 'British Pound' },
+]
+
+const session = [
+    { value: "30", name: "30 minutes" },
+    { value: "60", name: "1 hour" },
+    { value: "240", name: "4 hours" },
+    { value: "480", name: "8 hours" },
+    { value: "1440", name: "24 hours" },
+]
 
 const SettingsPage = () => {
     return (
@@ -64,11 +79,10 @@ const SettingsPage = () => {
                         <div className="space-y-4">
                             <div className="grid gap-2">
                                 <label className="text-sm font-medium">Currency</label>
-                                <select title='currency' className="h-9 w-full rounded-md border bg-background px-3 py-1 text-sm">
-                                    <option value="USD">USD ($)</option>
-                                    <option value="EUR">EUR (€)</option>
-                                    <option value="GBP">GBP (£)</option>
-                                </select>
+                                <SelectComponent
+                                    options={currencies}
+                                    placeholder='Select Currency'
+                                />
                             </div>
                             <div className="grid gap-2">
                                 <p className="text-sm font-medium">Payment Methods</p>
@@ -100,21 +114,21 @@ const SettingsPage = () => {
                         </div>
                         <div className="space-y-4">
                             <div className="space-y-2">
-                                <label className="flex items-center justify-between">
+                                <label htmlFor='order-notifications' className="flex items-center justify-between">
                                     <span className="text-sm">Order notifications</span>
-                                    <input type="checkbox" defaultChecked className="rounded" />
+                                    <input id='order-notifications' type="checkbox" defaultChecked className="rounded" />
                                 </label>
-                                <label className="flex items-center justify-between">
+                                <label htmlFor='customer-queries' className="flex items-center justify-between">
                                     <span className="text-sm">Customer inquiries</span>
-                                    <input type="checkbox" defaultChecked className="rounded" />
+                                    <input id='customer-queries' type="checkbox" defaultChecked className="rounded" />
                                 </label>
-                                <label className="flex items-center justify-between">
+                                <label htmlFor='low-stock' className="flex items-center justify-between">
                                     <span className="text-sm">Low stock alerts</span>
-                                    <input type="checkbox" defaultChecked className="rounded" />
+                                    <input id='low-stock' type="checkbox" defaultChecked className="rounded" />
                                 </label>
-                                <label className="flex items-center justify-between">
+                                <label htmlFor='marketing-emails' className="flex items-center justify-between">
                                     <span className="text-sm">Marketing emails</span>
-                                    <input type="checkbox" className="rounded" />
+                                    <input id='marketing-emails' type="checkbox" className="rounded" />
                                 </label>
                             </div>
                         </div>
@@ -130,23 +144,22 @@ const SettingsPage = () => {
                         </div>
                         <div className="space-y-4">
                             <div className="grid gap-2">
-                                <label className="text-sm font-medium">Two-Factor Authentication</label>
+                                <label htmlFor='2fa' className="text-sm font-medium">Two-Factor Authentication</label>
                                 <div className="flex items-center space-x-2">
-                                    <Input type="checkbox" className="rounded" />
+                                    <input
+                                        name='2fa'
+                                        id='2fa'
+                                        type="checkbox" className="rounded"
+                                    />
                                     <span className="text-sm">Enable 2FA for admin accounts</span>
                                 </div>
                             </div>
                             <div className="grid gap-2">
                                 <label className="text-sm font-medium">Session Timeout</label>
-                                <select
-                                    title='Session Timeout'
-                                    name='select'
-                                    className="h-9 w-full rounded-md border bg-background px-3 py-1 text-sm">
-                                    <option value="30">30 minutes</option>
-                                    <option value="60">1 hour</option>
-                                    <option value="240">4 hours</option>
-                                    <option value="480">8 hours</option>
-                                </select>
+                                <SelectComponent
+                                    options={session}
+                                    placeholder='Select Session Duration'
+                                />
                             </div>
                         </div>
                     </div>
@@ -161,18 +174,19 @@ const SettingsPage = () => {
                         </div>
                         <div className="space-y-4">
                             <div className="grid gap-2">
-                                <label className="text-sm font-medium">Admin Email</label>
+                                <label htmlFor='admin-email' className="text-sm font-medium">Admin Email</label>
                                 <input
+                                    id='admin-email'
                                     type="email"
-                                    defaultValue="admin@nikestore.com"
+                                    defaultValue="admin@shopora.com"
                                     className="h-9 w-full rounded-md border bg-background px-3 py-1 text-sm"
                                 />
                             </div>
                             <div className="grid gap-2">
                                 <label className="text-sm font-medium">Change Password</label>
-                                <button className="inline-flex items-center justify-center rounded-md border px-4 py-2 text-sm hover:bg-accent">
+                                <Button className="">
                                     Change Password
-                                </button>
+                                </Button>
                             </div>
                         </div>
                     </div>
