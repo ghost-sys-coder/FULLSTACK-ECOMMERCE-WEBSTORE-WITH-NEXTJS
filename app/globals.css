@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+
 @theme {
   /* Dark shades */
   --color-dark-900: #111111;
@@ -58,3 +59,4 @@
   --text-footnote--line-height: 18px;
   --text-footnote--font-weight: 400;
 }
+
