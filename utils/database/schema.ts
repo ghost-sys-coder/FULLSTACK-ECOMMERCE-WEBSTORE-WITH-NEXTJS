@@ -1,10 +1,25 @@
 import {
   boolean,
   integer,
+  pgEnum,
   pgTable,
   text,
   timestamp,
 } from "drizzle-orm/pg-core";
+
+/**
+ * ?? Products Table Schema
+ */
+
+export const statusEnum = pgEnum("status", [
+  "active",
+  "inactive",
+  "discontinued",
+  "out_of_stock",
+  "pre_order",
+]);
+
+export const roleEnum = pgEnum("role", ["user", "admin"]);
 
 export const products = pgTable("products", {
   id: integer("id").primaryKey(),
@@ -12,6 +27,7 @@ export const products = pgTable("products", {
   description: text("description").notNull(),
   price: integer("price").notNull(),
   stock: integer("stock").notNull(),
+  status: statusEnum("status").notNull().default("active"),
   category: text("category").notNull(),
   subCategory: text("sub_category"),
   brand: text("brand").notNull(),
@@ -32,6 +48,10 @@ export const user = pgTable("user", {
     .$defaultFn(() => false)
     .notNull(),
   image: text("image"),
+
+  // Add role field with default value 'user'
+  role: roleEnum("role").notNull().default("user"),
+  
   createdAt: timestamp("created_at")
     .$defaultFn(() => /* @__PURE__ */ new Date())
     .notNull(),

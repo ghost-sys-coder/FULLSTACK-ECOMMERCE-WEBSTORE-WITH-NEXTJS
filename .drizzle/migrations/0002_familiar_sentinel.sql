@@ -1,0 +1,2 @@
+CREATE TYPE "public"."status" AS ENUM('active', 'inactive', 'discontinued', 'out_of_stock', 'pre_order');--> statement-breakpoint
+ALTER TABLE "products" ADD COLUMN "status" "status" DEFAULT 'active' NOT NULL;

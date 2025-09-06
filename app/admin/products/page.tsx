@@ -1,57 +1,71 @@
-import React from 'react'
-import { Search, Plus, Edit, Trash2, Eye } from 'lucide-react'
+"use client";
+import React, { useState } from 'react'
+import { Search, Edit, Trash2, Eye, Plus } from 'lucide-react'
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
+import ProductCreationDialog from '@/components/dashboard/ProductCreationDialog'
+import SelectComponent from '@/components/dashboard/SelectComponent';
+
+
+const products = [
+  {
+    id: 1,
+    name: 'Nike Air Max 270',
+    category: 'Running',
+    price: '$150.00',
+    stock: 45,
+    status: 'Active',
+    image: '/shoes/shoe-1.jpg',
+  },
+  {
+    id: 2,
+    name: 'Nike React Element 55',
+    category: 'Lifestyle',
+    price: '$130.00',
+    stock: 23,
+    status: 'Active',
+    image: '/shoes/shoe-2.webp',
+  },
+  {
+    id: 3,
+    name: 'Nike Air Force 1',
+    category: 'Casual',
+    price: '$110.00',
+    stock: 67,
+    status: 'Active',
+    image: '/shoes/shoe-3.webp',
+  },
+  {
+    id: 4,
+    name: 'Nike Dunk Low',
+    category: 'Basketball',
+    price: '$100.00',
+    stock: 12,
+    status: 'Low Stock',
+    image: '/shoes/shoe-4.webp',
+  },
+  {
+    id: 5,
+    name: 'Nike Blazer Mid',
+    category: 'Casual',
+    price: '$90.00',
+    stock: 0,
+    status: 'Out of Stock',
+    image: '/shoes/shoe-5.avif',
+  },
+]
+
+const categories = [
+  { name: 'Running', value: 'running' },
+  { name: 'Lifestyle', value: 'lifestyle' },
+  { name: 'Casual', value: 'casual' },
+  { name: 'Basketball', value: 'basketball' },
+]
+
 
 const ProductsPage = () => {
-  const products = [
-    {
-      id: 1,
-      name: 'Nike Air Max 270',
-      category: 'Running',
-      price: '$150.00',
-      stock: 45,
-      status: 'Active',
-      image: '/shoes/shoe-1.jpg',
-    },
-    {
-      id: 2,
-      name: 'Nike React Element 55',
-      category: 'Lifestyle',
-      price: '$130.00',
-      stock: 23,
-      status: 'Active',
-      image: '/shoes/shoe-2.webp',
-    },
-    {
-      id: 3,
-      name: 'Nike Air Force 1',
-      category: 'Casual',
-      price: '$110.00',
-      stock: 67,
-      status: 'Active',
-      image: '/shoes/shoe-3.webp',
-    },
-    {
-      id: 4,
-      name: 'Nike Dunk Low',
-      category: 'Basketball',
-      price: '$100.00',
-      stock: 12,
-      status: 'Low Stock',
-      image: '/shoes/shoe-4.webp',
-    },
-    {
-      id: 5,
-      name: 'Nike Blazer Mid',
-      category: 'Casual',
-      price: '$90.00',
-      stock: 0,
-      status: 'Out of Stock',
-      image: '/shoes/shoe-5.avif',
-    },
-  ]
-
+  const [openModal, setOpenModal] = useState(false);
+  
   const getStatusColor = (status: string) => {
     switch (status) {
       case 'Active':
@@ -66,7 +80,7 @@ const ProductsPage = () => {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 relative">
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-3xl font-bold tracking-tight">Products</h1>
@@ -78,10 +92,13 @@ const ProductsPage = () => {
           <Button className="inline-flex items-center justify-center rounded-md border px-4 py-2 text-sm font-medium hover:bg-accent">
             Import
           </Button>
-          <Button className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90">
+          <Button
+            onClick={() => setOpenModal(true)}
+            className='cursor-pointer inline-flex items-center justify-center rounded-md border px-4 py-2 text-sm font-medium hover:bg-accent'>
             <Plus className="mr-2 h-4 w-4" />
             Add Product
           </Button>
+          {openModal && <ProductCreationDialog />}
         </div>
       </div>
 
@@ -137,13 +154,10 @@ const ProductsPage = () => {
                   className="pl-8 h-9 w-[300px] rounded-md border bg-background px-3 py-1 text-sm shadow-sm"
                 />
               </div>
-              <select title='category' className="h-9 w-[150px] rounded-md border bg-background px-3 py-1 text-sm">
-                <option value="">All Categories</option>
-                <option value="running">Running</option>
-                <option value="lifestyle">Lifestyle</option>
-                <option value="casual">Casual</option>
-                <option value="basketball">Basketball</option>
-              </select>
+              <SelectComponent
+                options={categories}
+                placeholder='Filter by Category'
+              />
             </div>
             <div className="text-sm text-muted-foreground">
               {products.length} products

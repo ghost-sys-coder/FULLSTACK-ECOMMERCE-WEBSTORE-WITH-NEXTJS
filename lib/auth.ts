@@ -32,14 +32,14 @@ export const auth = betterAuth({
         expiresIn: 60 * 60 * 24 * 7, // expires in 7 days
         updateAge: 60 * 60 * 24 // update every 24 hours
     },
-    // user: {
-    //     additionalFields: {
-    //         role: {
-    //             type: "string",
-    //             defaultValue: "user"
-    //         }
-    //     }
-    // }
+    user: {
+        additionalFields: {
+            role: {
+                type: "string",
+                defaultValue: "user" // default role is 'user'
+            }
+        }
+    }
 });
 
 

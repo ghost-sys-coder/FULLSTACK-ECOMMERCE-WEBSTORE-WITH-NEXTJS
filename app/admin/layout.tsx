@@ -1,16 +1,17 @@
-import React, { ReactNode } from 'react'
+import React from 'react'
 import { SidebarProvider, SidebarInset, SidebarTrigger } from '@/components/ui/sidebar'
 import AppSidebar from '@/components/shared/AppSidebar'
 import { auth } from '@/lib/auth'
 import { headers } from 'next/headers'
 import AccessDeniedComponent from '@/components/shared/AccessDeniedComponent'
 
-const AdminLayout = async ({ children }: { children: ReactNode }) => {
+const AdminLayout = async (props: LayoutProps<"/admin">) => {
     const session = await auth.api.getSession({
         headers: await headers(),
     });
 
-    if (!session?.user) return <AccessDeniedComponent />
+
+    if (session?.user.role !== "admin") return <AccessDeniedComponent />
     return (
         <SidebarProvider>
             <AppSidebar />
@@ -20,7 +21,7 @@ const AdminLayout = async ({ children }: { children: ReactNode }) => {
                     <div className="flex-1" />
                 </header>
                 <main className="flex-1 overflow-auto p-4">
-                    {children}
+                    {props.children}
                 </main>
             </SidebarInset>
         </SidebarProvider>

@@ -43,7 +43,7 @@ const SettingsPage = () => {
                                 <Input
                                     id='store'
                                     type="text"
-                                    defaultValue="Nike Store"
+                                    defaultValue="Shopora"
                                     className="h-9 w-full rounded-md border bg-background px-3 py-1 text-sm"
                                 />
                             </div>
@@ -52,7 +52,7 @@ const SettingsPage = () => {
                                 <Textarea
                                     id='description'
                                     rows={3}
-                                    defaultValue="Your premier destination for Nike products."
+                                    defaultValue="Your premier destination for genuine, and authentic products."
                                     className="w-full rounded-md border bg-background px-3 py-2 text-sm"
                                 />
                             </div>
@@ -61,7 +61,7 @@ const SettingsPage = () => {
                                 <input
                                     id='email'
                                     type="email"
-                                    defaultValue="contact@nikestore.com"
+                                    defaultValue="support@shopora.com"
                                     className="h-9 w-full rounded-md border bg-background px-3 py-1 text-sm"
                                 />
                             </div>

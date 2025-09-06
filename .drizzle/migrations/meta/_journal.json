@@ -15,6 +15,20 @@
       "when": 1756548060725,
       "tag": "0001_gray_jetstream",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1757196451937,
+      "tag": "0002_familiar_sentinel",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1757197387801,
+      "tag": "0003_light_mojo",
+      "breakpoints": true
     }
   ]
 }
