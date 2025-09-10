@@ -29,6 +29,13 @@
       "when": 1757197387801,
       "tag": "0003_light_mojo",
       "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1757200011186,
+      "tag": "0004_familiar_richard_fisk",
+      "breakpoints": true
     }
   ]
 }

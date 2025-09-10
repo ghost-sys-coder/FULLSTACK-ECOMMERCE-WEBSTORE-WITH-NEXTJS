@@ -1,0 +1,1 @@
+ALTER TABLE "products" ADD COLUMN "creator" text NOT NULL;

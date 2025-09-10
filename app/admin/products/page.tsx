@@ -93,12 +93,14 @@ const ProductsPage = () => {
             Import
           </Button>
           <Button
-            onClick={() => setOpenModal(true)}
+            onClick={() => setOpenModal(!openModal)}
             className='cursor-pointer inline-flex items-center justify-center rounded-md border px-4 py-2 text-sm font-medium hover:bg-accent'>
             <Plus className="mr-2 h-4 w-4" />
             Add Product
           </Button>
-          {openModal && <ProductCreationDialog />}
+          {openModal && (
+            <ProductCreationDialog onClose={() => setOpenModal(false)} />
+          )}
         </div>
       </div>
 

@@ -2,7 +2,11 @@ import React from 'react'
 import Link from 'next/link'
 import { AlertCircle, Lock } from 'lucide-react'
 
-const AccessDeniedComponent = () => {
+interface AccessDeniedProps {
+    message?: string;
+}
+
+const AccessDeniedComponent: React.FC<AccessDeniedProps> = ({message}) => {
     return (
         <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 flex items-center justify-center p-4">
             <div className="w-full max-w-md">
@@ -13,7 +17,7 @@ const AccessDeniedComponent = () => {
 
                     <h1 className="text-2xl font-bold text-slate-900 mb-4">Access Denied</h1>
                     <p className="text-slate-600 mb-8">
-                        You need to be signed in to access this page.
+                        {message}
                     </p>
 
                     <div className="space-y-3">

@@ -33,6 +33,7 @@ export const products = pgTable("products", {
   brand: text("brand").notNull(),
   imageUrl: text("image_url").notNull(),
   featured: boolean("featured").default(false).notNull(),
+  creator: text("creator").notNull(),
   createdAt: timestamp("createdAt").defaultNow().notNull(),
   updatedAt: timestamp("updatedAt").defaultNow().notNull(),
 });
